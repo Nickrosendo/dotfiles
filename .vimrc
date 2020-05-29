@@ -147,7 +147,7 @@ map <C-t><right> :tabn<cr>
 
 
 "fzf commands remaps
-map <F1> :Files<CR> 
+map <F1> :Ag<CR> 
 map <C-p> :Buffers<CR>
 
 " Remap <space-tab> to mru buffer switch
