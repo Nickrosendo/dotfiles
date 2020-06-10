@@ -1,0 +1,1 @@
+/home/nickrosendo/dotfiles/.vimrc

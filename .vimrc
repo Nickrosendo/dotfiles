@@ -82,7 +82,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-colorscheme minimalist 
+colorscheme minimalist
+"highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
 
 " vim-airline configurations
 let g:airline_theme='minimalist'
@@ -173,6 +174,12 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
+"Go To definition remappings
+  nmap <buffer> <leader>gd <Plug>(coc-definition)
+  nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+  nmap <buffer> <leader>gi <Plug>(coc-implementation)
+  nmap <buffer> <leader>gr <Plug>(coc-references)
 
 " =============================================================================
 " # Code Formating Settings

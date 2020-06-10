@@ -8,7 +8,7 @@ export ZSH="/home/nickrosendo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="clean"
+ZSH_THEME="dallas"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,3 +108,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore /node_modules/'
+
+
+export CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
