@@ -138,8 +138,8 @@ let mapleader = "\<Space>"
 "map coc prettier format to <C-F>
 nmap <C-F> :call Get_default_formatter_command() <CR>
 
-"toggle nerdtree filesystem in current folder with <C-B>
-nmap <C-B> :call NERDTreeToggleInCurDir()<CR>
+" toggle nerdtree filesystem in current folder with <C-B>
+" nmap <C-B> :call NERDTreeToggleInCurDir()<CR>
 
 "tab navegation key mappings
 map <C-t><up> :tabr<cr>
@@ -150,6 +150,7 @@ map <C-t><right> :tabn<cr>
 
 "fzf commands remaps
 map <F1> :Ag<CR> 
+map <C-B> :Files <CR>
 map <C-p> :Buffers<CR>
 
 " Remap <space-tab> to mru buffer switch
