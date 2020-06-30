@@ -10,6 +10,7 @@ filetype plugin indent on " allow auto filtype plugin and indentation configurat
 set hidden
 set nobackup
 set nowritebackup
+set cursorline " Enable highlight current cursor line
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -235,5 +236,9 @@ Plug 'altercation/solarized'
 
 "Code typing helpers
 Plug 'jiangmiao/auto-pairs'
+
+"Line highlighting
+Plug 'danilamihailov/beacon.nvim' "Hightlight current line after a jump
+Plug 'inside/vim-search-pulse' "Hightlight current line after a search
 
 call plug#end()
