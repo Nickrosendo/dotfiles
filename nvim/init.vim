@@ -81,10 +81,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " =============================================================================
 
 "colorscheme stuff
-let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-colorscheme minimalist
+"colorscheme minimalist
 "highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
 
 " vim-airline configurations
@@ -102,6 +101,7 @@ function! Get_default_formatter_command()
   let formatters = { 
    \'cs': ':OmniSharpCodeFormat',
    \'rs': ':RustFmt',
+   \'rust': ':RustFmt',
    \'javascript': ':PrettierAsync',
    \'typescript': ':PrettierAsync',
    \'js': ':PrettierAsync',
