@@ -81,13 +81,18 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " =============================================================================
 
 "colorscheme stuff
-let g:solarized_termcolors=256
 set t_Co=256
 set background=dark
-colorscheme minimalist
-"highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
+colorscheme gruvbox
 
-" vim-airline configurations
+"highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
+"
+"gruvbox configurations
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+set termguicolors
+
+"vim-airline configurations
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -102,6 +107,7 @@ function! Get_default_formatter_command()
   let formatters = { 
    \'cs': ':OmniSharpCodeFormat',
    \'rs': ':RustFmt',
+   \'rust': ':RustFmt',
    \'javascript': ':PrettierAsync',
    \'typescript': ':PrettierAsync',
    \'js': ':PrettierAsync',
@@ -233,6 +239,7 @@ Plug 'prettier/vim-prettier', {
 "Color themes
 Plug 'dikiaap/minimalist'
 Plug 'altercation/solarized'
+Plug 'morhetz/gruvbox'
 
 "Code typing helpers
 Plug 'jiangmiao/auto-pairs'
