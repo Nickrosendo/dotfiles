@@ -58,6 +58,42 @@ keys = [
     Key([mod], "Tab", lazy.next_layout()),
     Key([mod], "w", lazy.window.kill()),
 
+    # Set focus to main screen
+    Key(
+        [mod], "1",
+        lazy.to_screen(0),
+    ),
+
+    # Send secondary screen to main screen
+    Key(
+        [mod, 'shift'], "1",
+        lazy.group.toscreen(0)
+    ),
+
+    # Set focus to secondary screen
+    Key(
+        [mod], "2",
+        lazy.to_screen(1),
+    ),
+
+    # Send primary screen to secondary screen
+    Key(
+        [mod, 'shift'], "2",
+        lazy.group.toscreen(1)
+    ),
+
+    # Set focus to left screen
+    Key(
+        [mod, 'shift'], "h",
+        lazy.to_screen(0)
+    ),
+
+    # Set focus to right screen
+    Key(
+        [mod, 'shift'], "l",
+        lazy.to_screen(1)
+    ),
+
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
@@ -102,7 +138,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.Prompt(),
                 widget.Clock(
@@ -145,13 +181,18 @@ screens = [
                 widget.Net(
                     format='{down} ↓↑ {up}'
                     ),
+                widget.CurrentLayout(
+                    font='Roboto Mono',
+                    fontsize=14
+                    ),
+                widget.CurrentLayoutIcon(),
             ],
             30,
             background='#353535'
         ),
     ),
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
                 widget.Pomodoro(),
                 widget.Notify(),
