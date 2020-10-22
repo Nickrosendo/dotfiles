@@ -81,9 +81,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " =============================================================================
 
 "colorscheme stuff
-set t_Co=256
-set background=dark
-colorscheme gruvbox
+" set t_Co=256
+" set background=dark
+" colorscheme gruvbox
 
 "highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
 "
@@ -189,6 +189,16 @@ endif
   nmap <buffer> <leader>gy <Plug>(coc-type-definition)
   nmap <buffer> <leader>gi <Plug>(coc-implementation)
   nmap <buffer> <leader>gr <Plug>(coc-references)
+
+" Remap pane split keybindings to use <leader-w> instead of <C-w>
+nnoremap <leader>ws :sp<cr>
+nnoremap <leader>wv :vs<cr>
+
+" Remap pane splits moving keybinding to use <leader> key instead of <ctrl>
+nnoremap <leader>wh <c-w>h<cr>
+nnoremap <leader>wj <c-w>j<cr>
+nnoremap <leader>wk <c-w>k<cr>
+nnoremap <leader>wl <c-w>l<cr>
 
 " =============================================================================
 " # Code Formating Settings

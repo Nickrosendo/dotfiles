@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dallas"
+ZSH_THEME="clean"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,3 +111,11 @@ export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore /node_modules/'
 
 
 export CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/nickrosendo/tech/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nickrosendo/tech/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/nickrosendo/tech/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nickrosendo/tech/google-cloud-sdk/completion.zsh.inc'; fi
+
+export GOOGLE_APPLICATION_CREDENTIALS='/home/nickrosendo/.config/crd/no-production-70a1b46f9e3d.json'
