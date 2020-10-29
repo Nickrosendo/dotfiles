@@ -199,6 +199,8 @@ nnoremap <leader>wh <c-w>h<cr>
 nnoremap <leader>wj <c-w>j<cr>
 nnoremap <leader>wk <c-w>k<cr>
 nnoremap <leader>wl <c-w>l<cr>
+nnoremap <leader>wK <c-w>K<cr>
+nnoremap <leader>wH <c-w>H<cr>
 
 " =============================================================================
 " # Code Formating Settings
