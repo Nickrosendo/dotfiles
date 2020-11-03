@@ -83,7 +83,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "colorscheme stuff
 " set t_Co=256
 " set background=dark
-" colorscheme gruvbox
+colorscheme spacegray
 
 "highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
 "
@@ -209,7 +209,10 @@ nnoremap <leader>wH <c-w>H<cr>
 "enable format on save of rust code
 let g:rustfmt_autosave = 1
 
-" =============================================================================
+" identline plugin configuration
+let g:indentLine_char_list = ['|']
+
+"=============================================================================
 " # Plugins 
 " =============================================================================
 
@@ -248,13 +251,21 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
+"Identation helpers
+Plug 'yggdroot/indentline'
+
 "Color themes
 Plug 'dikiaap/minimalist'
 Plug 'altercation/solarized'
 Plug 'morhetz/gruvbox'
+Plug 'ajh17/spacegray.vim'
 
 "Code typing helpers
 Plug 'jiangmiao/auto-pairs'
+
+"FrontEnd helpers
+Plug 'ap/vim-css-color'
+Plug 'gregsexton/matchtag'
 
 "Line highlighting
 Plug 'danilamihailov/beacon.nvim' "Hightlight current line after a jump
