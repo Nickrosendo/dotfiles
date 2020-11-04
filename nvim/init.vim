@@ -202,15 +202,15 @@ nnoremap <leader>wl <c-w>l<cr>
 nnoremap <leader>wK <c-w>K<cr>
 nnoremap <leader>wH <c-w>H<cr>
 
+" vim-maximizer command remap
+nnoremap <leader>z :MaximizerToggle<cr>
+
 " =============================================================================
 " # Code Formating Settings
 " =============================================================================
 
 "enable format on save of rust code
 let g:rustfmt_autosave = 1
-
-" identline plugin configuration
-let g:indentLine_char_list = ['|']
 
 "=============================================================================
 " # Plugins 
@@ -224,6 +224,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim' " Fast Finder for files, buffer ...
 Plug 'airblade/vim-rooter' "Set the work directory to the root of the current project
+
+"Multiplexer plugins"
+Plug 'szw/vim-maximizer'
 
 "Languages pack
 Plug 'rust-lang/rust.vim'
@@ -250,9 +253,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
-"Identation helpers
-Plug 'yggdroot/indentline'
 
 "Color themes
 Plug 'dikiaap/minimalist'
