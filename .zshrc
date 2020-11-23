@@ -97,9 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias firefox-dev=firefox-developer-edition
 #
 export EDITOR=$(which vim)
 export TERMINAL=alacritty
+export BROWSER=$(which firefox-developer-edition)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
