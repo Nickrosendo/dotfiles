@@ -10,5 +10,5 @@ i3status | (read line && echo "$line" && read line && echo "$line" && read line 
 do
   read line
   get_cpu_temperature 
-  echo ",[{\"full_text\":\"${temperature}\" },${line#,\[}" || exit 1 
+  echo ",[{\"full_text\":\"${temperature}     \" },${line#,\[}" || exit 1 
 done)

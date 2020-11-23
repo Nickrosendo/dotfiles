@@ -4,13 +4,31 @@ general {
         interval = 5
 }
 
+order += "time"
+order += "tztime local"
 order += "cpu_usage"
 order += "memory"
 
 memory {
   format = "memory: (%used) / %total"
+  align = "center"
+  min_width = 300
 }
 
 cpu_usage {
   format = "cpu: %usage"
+  align = "center"
+  min_width = 150
+}
+
+time {
+  format = "%H:%M"
+  align = "center"
+  min_width = 150
+}
+
+tztime local {
+  format = "%Y-%m-%d"
+  align = "center"
+  min_width = 200
 }
