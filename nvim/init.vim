@@ -217,7 +217,7 @@ let g:rustfmt_autosave = 1
 " =============================================================================
 
 "Plugin Manager
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 "FileSystem Plugins"
 Plug 'scrooloose/nerdtree'

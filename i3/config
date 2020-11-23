@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Terminus 16
+font pango: Terminus 22px
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -174,18 +174,44 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#################################################
+# BAR LAYOUT
+#################################################
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command 		i3status
+  status_command 	exec ~/.config/status-scripts/custom_i3status.sh
 	position		top
 	workspace_buttons 	yes
 	font pango: Droid Sans 22px
 	colors {
-		background #632a4d
-		statusline #ff88ff
-		separator #ffddff
+		background #3f1c1f
+		statusline #ebd8da
+		separator #ebd8da
 	}
 }
 
+#################################################
+# AUTOSTART
+#################################################
 exec alacritty
+exec firefox-dev
+
+#################################################
+# STYLING
+#################################################
+title_align center
+
+
+#################################################
+# COLOURS
+#################################################
+#class                  border  backgr. text    indicator child_border
+client.focused          #ebd8da #3f1c1f #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #250e10 #ffffff #484e50   #5f676a
+client.unfocused        #333333 #090203 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #eeeeee
