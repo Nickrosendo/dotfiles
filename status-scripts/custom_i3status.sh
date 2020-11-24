@@ -3,7 +3,7 @@
 
 temperature=""
 get_cpu_temperature() {
-  temperature="cpu_temperature: $(sensors | grep Tctl: | awk '{ print $2 $3}')"
+  temperature=" $(sensors | grep Tctl: | awk '{ print $2 $3}')"
 }
 
 i3status | (read line && echo "$line" && read line && echo "$line" && read line && echo "$line" && get_cpu_temperature && while :

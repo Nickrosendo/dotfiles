@@ -8,27 +8,35 @@ order += "time"
 order += "tztime local"
 order += "cpu_usage"
 order += "memory"
+order += "ethernet enp4s0"
 
 memory {
-  format = "memory: (%used) / %total"
+  format = " (%used) / %total"
   align = "center"
   min_width = 300
 }
 
 cpu_usage {
-  format = "cpu: %usage"
+  format = " %usage"
   align = "center"
   min_width = 150
 }
 
 time {
-  format = "%H:%M"
+  format = " %H:%M"
   align = "center"
   min_width = 150
 }
 
 tztime local {
-  format = "%Y-%m-%d"
+  format = " %Y-%m-%d"
   align = "center"
   min_width = 200
+}
+
+ethernet enp4s0 {
+  format_up = ": %ip (%speed)"
+  format_down = ":  down"
+  align = "center"
+  min_width = 350
 }
