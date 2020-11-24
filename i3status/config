@@ -35,8 +35,8 @@ tztime local {
 }
 
 ethernet enp4s0 {
-  format_up = ": %ip (%speed)"
+  format_up = ": (%speed)"
   format_down = ":  down"
   align = "center"
-  min_width = 350
+  min_width = 200
 }
