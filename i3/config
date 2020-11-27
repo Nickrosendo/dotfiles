@@ -199,6 +199,9 @@ colors {
 #################################################
 # AUTOSTART
 #################################################
+
+exec xcompmgr -c -f -n
+exec nitrogen --restore &
 exec alacritty
 exec firefox-developer-edition
 
@@ -220,3 +223,14 @@ client.urgent           #7c6f64 #fabd2f #3c3836 #fabd2f
 # $i3-background
 exec_always --no-startup-id xsetroot -solid '#3c3836'
 
+#################################################
+# i3-gaps configurations
+#################################################
+
+# You can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 0
+gaps inner 16
+gaps outer 16
+
+# gaps inner all set 16
+smart_gaps on

@@ -92,6 +92,9 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 set termguicolors
 
+
+hi Normal guibg=NONE ctermbg=NONE
+
 "vim-airline configurations
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
