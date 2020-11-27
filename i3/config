@@ -200,7 +200,7 @@ colors {
 # AUTOSTART
 #################################################
 exec alacritty
-exec firefox-dev
+exec firefox-developer-edition
 
 #################################################
 # STYLING
