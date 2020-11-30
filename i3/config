@@ -105,16 +105,15 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "chat"
-set $ws2 "www"
-set $ws3 "code"
-set $ws4 "log"
-set $ws5 "monitoring"
-set $ws6 "music"
-set $ws7 "debug"
-set $ws8 "files"
-set $ws9 "video"
-set $ws10 "search"
+set $ws1 "1:  slack"
+set $ws2 "2:  firefox"
+set $ws3 "3:  code"
+set $ws4 "4: monitoring"
+set $ws5 "5:  chrome"
+set $ws6 "6:  opera"
+set $ws7 "7: log"
+set $ws8 "8: files"
+set $ws8 "9:  discord"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -126,7 +125,6 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -138,7 +136,6 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
