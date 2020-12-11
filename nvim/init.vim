@@ -81,9 +81,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " =============================================================================
 
 "colorscheme stuff
-" set t_Co=256
-" set background=dark
-colorscheme spacegray
+set t_Co=256
+set background=dark
+colorscheme gruvbox
 
 "highlight Normal cterm=bold ctermfg=15 ctermbg=0" Change background and foreground color
 "
