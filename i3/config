@@ -107,6 +107,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+#################################################
+# WORKSPACES
+#################################################
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:   slack"
@@ -230,9 +234,12 @@ colors {
 #################################################
 
 exec xcompmgr -c -f -n
+exec xrandr --output DP-1 --rotate right
 exec nitrogen --restore &
-exec alacritty
-exec firefox-developer-edition
+
+exec --no-startup-id i3-msg 'workspace 3:   code; exec alacritty'
+exec --no-startup-id i3-msg 'workspace 2:   firefox; exec firefox-developer-edition'
+exec --no-startup-id i3-msg 'workspace 1:   slack; exec slack'
 
 #################################################
 # STYLING
