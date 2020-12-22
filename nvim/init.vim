@@ -63,9 +63,11 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-json', 
   \ 'coc-vetur',
-  \ 'coc-diagnostic'
+  \ 'coc-diagnostic',
+  \ 'coc-prettier',
+  \ 'coc-html',
+  \ 'coc-css'
   \ ]
-
 
 "disable coc vim update warning
 let g:coc_disable_startup_warning = 1
@@ -103,6 +105,10 @@ let g:airline#extensions#tabline#enabled = 1
 " =============================================================================
 " # Util Functions 
 " =============================================================================
+" 
+
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 "get current file specific formatter
 function! Get_default_formatter_command()
@@ -113,12 +119,17 @@ function! Get_default_formatter_command()
    \'rust': ':RustFmt',
    \'javascript': ':PrettierAsync',
    \'typescript': ':PrettierAsync',
+   \'typescriptreact': ':PrettierAsync',
+   \'javascriptreact': ':PrettierAsync',
    \'js': ':PrettierAsync',
    \'ts': ':PrettierAsync',
    \'json': ':PrettierAsync',
    \'vue': ':PrettierAsync',
    \'jsx': ':PrettierAsync',
-   \'tsx': ':PrettierAsync'
+   \'tsx': ':PrettierAsync',
+   \'html': ':PrettierAsync',
+   \'css': ':PrettierAsync',
+   \'scss': ':PrettierAsync',
    \}
   if has_key(formatters, current_filetype)
     execute formatters[current_filetype]
@@ -141,6 +152,7 @@ endfunction
 " =============================================================================
 " # Remappings 
 " =============================================================================
+" 
 
 " map leader to space
 let mapleader = "\<Space>"
@@ -236,7 +248,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'Quramy/tsuquyomi' "typescript helper
 Plug 'leafgarland/typescript-vim' " Typescript highlighter
 
 " Autocomplete stuff
@@ -255,7 +266,7 @@ Plug 'vim-airline/vim-airline'
 "formating
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'tsx', 'typescriptreact', 'javascriptreact'] }
 
 "Color themes
 Plug 'dikiaap/minimalist'
