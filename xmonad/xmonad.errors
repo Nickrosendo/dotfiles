@@ -1,0 +1,7 @@
+
+xmonad.hs:249:16: warning: [-Wtabs]
+    Tab character found here, and in four further locations.
+    Please use spaces instead.
+    |
+249 | myStartupHook = do
+    |                ^

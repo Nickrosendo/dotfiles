@@ -30,7 +30,7 @@ colors:
 
 # Font configuration (changes require restart)
 font:
-  size: 16
+  size: 14
   normal: 
     family: Source Code Pro
     style: Regular
