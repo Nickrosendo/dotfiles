@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -53,6 +53,12 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# update language to brazilean portuguese
+bindings $mod+space+b exec setxkbmap -option us, br
+
+# update language to us englishg
+bindings $mod+space+e exec setxkbmap -option br, us
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -80,7 +86,6 @@ bindsym $mod+Shift+Right move right
 # move focused workspace between monitors
 bindsym $mod+Ctrl+greater move workspace to output right
 bindsym $mod+Ctrl+less move workspace to output left
-
 # split in horizontal orientation
 bindsym $mod+Shift+h split h
 
@@ -114,7 +119,7 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:   slack"
-set $ws2 "2:   firefox"
+set $ws2 "2:   brave"
 set $ws3 "3:   code"
 set $ws4 "4:   monitoring"
 set $ws5 "5:   chrome"
@@ -234,12 +239,12 @@ colors {
 #################################################
 
 exec xcompmgr -c -f -n
-exec xrandr --output DP-1 --rotate right
 exec nitrogen --restore &
+exec fbxkb
 
 exec --no-startup-id i3-msg 'workspace 3:   code; exec alacritty'
 exec --no-startup-id i3-msg 'workspace 2:   firefox; exec firefox-developer-edition'
-exec --no-startup-id i3-msg 'workspace 1:   slack; exec slack'
+#exec --no-startup-id i3-msg 'workspace 1:   slack; exec slack'
 
 #################################################
 # STYLING

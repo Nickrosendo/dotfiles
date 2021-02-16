@@ -115,10 +115,10 @@ export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore /node_modules/'
 
 export CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
 
+export GOOGLE_APPLICATION_CREDENTIALS='/home/nickrosendo/.config/crd/analytics-293312-4c553e21980d.json'
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/nickrosendo/tech/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nickrosendo/tech/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/nickrosendo/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nickrosendo/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/nickrosendo/tech/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nickrosendo/tech/google-cloud-sdk/completion.zsh.inc'; fi
-
-export GOOGLE_APPLICATION_CREDENTIALS='/home/nickrosendo/.config/crd/analytics-293312-4c553e21980d.json'
+if [ -f '/home/nickrosendo/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nickrosendo/google-cloud-sdk/completion.zsh.inc'; fi

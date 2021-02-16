@@ -227,6 +227,10 @@ nnoremap <leader>z :MaximizerToggle<cr>
 "enable format on save of rust code
 let g:rustfmt_autosave = 1
 
+" set to 1, nvim will open the preview window after entering the markdown buffer
+" default: 0
+let g:mkdp_auto_start = 1
+
 "=============================================================================
 " # Plugins 
 " =============================================================================
@@ -273,9 +277,12 @@ Plug 'dikiaap/minimalist'
 Plug 'altercation/solarized'
 Plug 'morhetz/gruvbox'
 Plug 'ajh17/spacegray.vim'
+Plug 'sainnhe/sonokai'
 
 "Code typing helpers
-Plug 'jiangmiao/auto-pairs'
+
+" Code previews
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 "FrontEnd helpers
 Plug 'ap/vim-css-color'
