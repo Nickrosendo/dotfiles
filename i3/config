@@ -53,12 +53,6 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# update language to brazilean portuguese
-bindings $mod+space+b exec setxkbmap -option us, br
-
-# update language to us englishg
-bindings $mod+space+e exec setxkbmap -option br, us
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -241,9 +235,10 @@ colors {
 exec xcompmgr -c -f -n
 exec nitrogen --restore &
 exec fbxkb
+exec setxkbmap -option 'grp:alt_shift_toggle' -layout us,br
 
 exec --no-startup-id i3-msg 'workspace 3:   code; exec alacritty'
-exec --no-startup-id i3-msg 'workspace 2:   firefox; exec firefox-developer-edition'
+exec --no-startup-id i3-msg 'workspace 2:   brave; exec brave'
 #exec --no-startup-id i3-msg 'workspace 1:   slack; exec slack'
 
 #################################################
