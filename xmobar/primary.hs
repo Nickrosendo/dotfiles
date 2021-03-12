@@ -23,6 +23,6 @@ Config {
         \<fc=#F0C674> %brightness%</fc>\
         \<fc=#DE935F> %battery%</fc>\
         \<fc=#B5BD68> %volume% </fc>\
-        \<fc=#C41010> %date% </fc>\
+        \<fc=#CC6666> %date% </fc>\
         \%trayerpad%"
 }

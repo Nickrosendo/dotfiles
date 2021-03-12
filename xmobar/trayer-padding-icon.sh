@@ -9,7 +9,6 @@
 # `Run Com "/where/ever/trayer-padding-icon.sh" [] "trayerpad" 10`
 # and use `%trayerpad%` in your template.
 
-
 # Function to create a transparent Wx1 px XPM icon
 create_xpm_icon () {
     timestamp=$(date)

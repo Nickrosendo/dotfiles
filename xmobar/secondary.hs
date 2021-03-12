@@ -10,11 +10,13 @@ Config {
     persistent = True,
     commands = [ 
         Run Date "  %d %b %Y %H:%M " "date" 600,
-        Run Network "wlp2s0" ["-t", " <rx>kb  <tx>kb"] 150,
+        Run Network "enp4s0" ["-t", " <rx>kb  <tx>kb"] 150,
         Run Cpu ["-t", " (<total>%)","-H","50","--high","red"] 150,
         Run Memory ["-t", "  <used>M (<usedratio>%)"] 150,
         Run Com "volume" [] "volume" 10,
         Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
+        Run Com "/home/nickrosendo/.config/xmobar/cpu-temperature.sh" [] "cpu_temp" 600,
+
         Run UnsafeStdinReader
     ],
     sepChar = "%",
@@ -22,8 +24,9 @@ Config {
     template = "<fc=#C41010>  </fc>%UnsafeStdinReader% }{ \
         \<fc=#B294BB> %updates% </fc>\
         \<fc=#FFB86C> %cpu% </fc>\
+        \<fc=#85678F> %cpu_temp% </fc>\
         \<fc=#FF5555> %memory% </fc>\
-        \<fc=#c3e88d> %wlp2s0% </fc>\
-        \<fc=#82AAFF> %volume% </fc>\
-        \<fc=#8BE9FD> %date% </fc>"
+        \<fc=#8ABEB7> %wlp2s0% </fc>\
+        \<fc=#B5BD68> %volume% </fc>\
+        \<fc=#CC6666> %date% </fc>"
 }
