@@ -103,8 +103,8 @@ myLayoutHook = avoidStruts
     myDefaultLayout = 
             tall
         ||| noBorders monocle
-        ||| threeCol
-        ||| grid
+     -- ||| threeCol
+     -- ||| grid
 
 xmobarEscape :: String -> String
 xmobarEscape = concatMap doubleLts
