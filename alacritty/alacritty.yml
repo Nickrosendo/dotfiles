@@ -1,29 +1,32 @@
-background_opacity: 1
+background_opacity: 0.95
 
 colors:
+  # Default colors
   primary:
-    background: "0x2d2a2e"
-    foreground: "0xe3e1e4"
+    background: '0x2b2d2e'
+    foreground: '0xf7f7f6'
 
+  # Normal colors
   normal:
-    black: "0x1a181a"
-    red: "0xf85e84"
-    green: "0x9ecd6f"
-    yellow: "0xe5c463"
-    blue: "0x7accd7"
-    magenta: "0xab9df2"
-    cyan: "0xef9062"
-    white: "0xe3e1e4"
+    black:   '0x24262c'
+    red:     '0xc41010'
+    green:   '0x8c9440'
+    yellow:  '0xde935f'
+    blue:    '0x5f819d'
+    magenta: '0x85678f'
+    cyan:    '0x5e8d87'
+    white:   '0x707880'
 
+  # Bright colors
   bright:
-    black: "0x1a181a"
-    red: "0xf85e84"
-    green: "0x9ecd6f"
-    yellow: "0xe5c463"
-    blue: "0x7accd7"
-    magenta: "0xab9df2"
-    cyan: "0xef9062"
-    white: "0xe3e1e4"
+    black:   '0x373b41'
+    red:     '0xd76e6e'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
 
 # Font configuration (changes require restart)
 font:
