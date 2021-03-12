@@ -2,14 +2,14 @@
 
 Config { 
     font = "xft:UbuntuMono Nerd Font:weight=bold:pixelsize=16:antialias=true:hinting=true",
-    bgColor = "#292d3e",
-    fgColor = "#f07178",
+    bgColor = "#24262C",
+    fgColor = "#F7F7F6",
     lowerOnStart = True,
     hideOnStart = False,
     allDesktops = True,
     persistent = True,
     commands = [ 
-        Run Date "  %d %b %Y %H:%M " "date" 600,
+        Run Date "  %d %b %Y" "date" 600,
         Run Com "volume" [] "volume" 10,
         Run Com "battery" [] "battery" 600,
         Run Com "brightness" [] "brightness" 10,
@@ -18,11 +18,11 @@ Config {
         Run UnsafeStdinReader
     ],
     alignSep = "}{",
-    template = "<fc=#b303ff>   </fc>%UnsafeStdinReader% }{ \
-        \<fc=#e1acff> %updates% </fc>\
-        \<fc=#FFB86C> %brightness%</fc>\
-        \<fc=#c3e88d> %battery%</fc>\
-        \<fc=#82AAFF> %volume% </fc>\
-        \<fc=#8BE9FD> %date% </fc>\
+    template = "<fc=#C41010>  </fc>%UnsafeStdinReader% }{ \
+        \<fc=#B294BB> %updates% </fc>\
+        \<fc=#F0C674> %brightness%</fc>\
+        \<fc=#DE935F> %battery%</fc>\
+        \<fc=#B5BD68> %volume% </fc>\
+        \<fc=#C41010> %date% </fc>\
         \%trayerpad%"
 }

@@ -2,8 +2,8 @@
 
 Config { 
     font = "xft:UbuntuMono Nerd Font:weight=bold:pixelsize=16:antialias=true:hinting=true",
-    bgColor = "#292d3e",
-    fgColor = "#f07178",
+    bgColor = "#24262C",
+    fgColor = "#F7F7F6",
     lowerOnStart = True,
     hideOnStart = False,
     allDesktops = True,
@@ -19,8 +19,8 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "<fc=#b303ff>   </fc> %UnsafeStdinReader% }{ \
-        \<fc=#e1acff> %updates% </fc>\
+    template = "<fc=#C41010>  </fc>%UnsafeStdinReader% }{ \
+        \<fc=#B294BB> %updates% </fc>\
         \<fc=#FFB86C> %cpu% </fc>\
         \<fc=#FF5555> %memory% </fc>\
         \<fc=#c3e88d> %wlp2s0% </fc>\

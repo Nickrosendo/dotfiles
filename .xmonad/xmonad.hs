@@ -47,18 +47,18 @@ myModMask = mod4Mask :: KeyMask
 
 myTerminal = "alacritty" :: String
 
-myBorderWidth = 1 :: Dimension
+myBorderWidth = 2 :: Dimension
 
-myNormColor = "#292d3e" :: String
+myNormColor = "#414548" :: String
 
-myFocusColor = "#c792ea" :: String
+myFocusColor = "#F7F7F6" :: String
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 40 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 &"
+    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 100 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 & xcompmgr -c -f -n & nitrogen --restore & fbxkb"
     setWMName "LG3D"
 
 
@@ -101,8 +101,8 @@ myLayoutHook = avoidStruts
     $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
   where
     myDefaultLayout = 
-        noBorders monocle
-        ||| tall
+            tall
+        ||| noBorders monocle
         ||| threeCol
         ||| grid
 
@@ -116,7 +116,9 @@ myWorkspaces :: [String]
 myWorkspaces = clickable . (map xmobarEscape)
 --                                                                                         
 --    $ ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "]
-    $ ["www", "dev", "term", "ref", "sys", "fs", "img", "vid", "misc"]
+--
+--  $ ["browser", "dev", "term", "ref", "sys", "fs", "img", "vid", "misc"]
+  $ ["chat", "brave ", "code", "chromium", "opera", "zoom", "servers", "monitoring", "notes"]
   where
     clickable l = ["<action=xdotool key super+" ++ show (i) ++ "> " ++ ws ++ "</action>" | (i, ws) <- zip [1 .. 9] l]
 
@@ -159,8 +161,6 @@ myKeys =
     ("M-<Tab>", sendMessage NextLayout),
     -- Switch to first layout
     ("M-S-<Tab>", sendMessage FirstLayout),
-    -- Toggles noborder/full
-    ("M-<Space>", sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts),
     -- Toggles noborder
     ("M-S-n", sendMessage $ MT.Toggle NOBORDERS),
     -- Shrink horizontal window width
@@ -179,7 +179,7 @@ myKeys =
     -- Window nav
     ("M-S-m", spawn "rofi -show"),
     -- Browser
-    ("M-b", spawn "firefox"),
+    ("M-b", spawn "brave"),
     -- File explorer
     ("M-e", spawn "pcmanfm"),
     -- Terminal
@@ -200,13 +200,16 @@ myKeys =
     -- Brightness
     ("<XF86MonBrightnessUp>", spawn "brightnessctl set +10%"),
     ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
+    
+    -------------------- Keyboard layout ----------------------
+    -- ("M-C-<Space>", spawn "language-switcher.sh"
     ]
 
 main :: IO ()
 main = do
     -- Xmobar
     xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
-    -- xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
     -- Xmonad
     xmonad $ ewmh def {
         manageHook = (isFullscreen --> doFullFloat) <+> manageDocks <+> insertPosition Below Newer,
@@ -221,21 +224,22 @@ main = do
         focusedBorderColor = myFocusColor,
         -- Log hook
         logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP {
-            ppOutput = \x -> hPutStrLn xmobarLaptop x,
+            
+            ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor x,
             -- Current workspace in xmobar
-            ppCurrent = xmobarColor "#c3e88d" "" . wrap "[" " ]",
+            ppCurrent = xmobarColor "#C41010" "" . wrap "[" " ]",
             -- Visible but not current workspace
-            ppVisible = xmobarColor "#c3e88d" "",
+            ppVisible = xmobarColor "#D76E6E" "",
             -- Hidden workspaces in xmobar
-            ppHidden = xmobarColor "#82AAFF" "",
+            ppHidden = xmobarColor "#C5C8C6" "",
             -- Hidden workspaces (no windows)
-            ppHiddenNoWindows = xmobarColor "#c792ea" "",
+            ppHiddenNoWindows = xmobarColor "#C5C8C6" "",
             -- Title of active window in xmobar
-            ppTitle = xmobarColor "#6272a4" "" . shorten 55,
+            ppTitle = xmobarColor "#F0C674" "" . shorten 55,
             -- Separators in xmobar
-            ppSep = "<fc=#666666> | </fc>",
+            ppSep = "<fc=#C41010> | </fc>",
             -- Urgent workspace
-            ppUrgent = xmobarColor "#C45500" "" . wrap "" "!",
+            ppUrgent = xmobarColor "#F0C674" "" . wrap "" "!",
             -- Number of windows in current workspace
             ppExtras = [windowCount],
             ppOrder = \(ws : l : t : ex) -> [ws, l] ++ ex ++ [t]
