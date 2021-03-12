@@ -2,8 +2,8 @@
 
 Config { 
     font = "xft:UbuntuMono Nerd Font:weight=bold:pixelsize=16:antialias=true:hinting=true",
-    bgColor = "#24262C",
-    fgColor = "#F7F7F6",
+    bgColor = "#181B20",
+    fgColor = "#9B9081",
     lowerOnStart = True,
     hideOnStart = False,
     allDesktops = True,
