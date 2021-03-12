@@ -118,7 +118,8 @@ myWorkspaces = clickable . (map xmobarEscape)
 --    $ ["\xf269 ", "\xe235 ", "\xe795 ", "\xf121 ", "\xe615 ", "\xf74a ", "\xf7e8 ", "\xf03d ", "\xf827 "]
 --
 --  $ ["browser", "dev", "term", "ref", "sys", "fs", "img", "vid", "misc"]
-  $ ["chat", "brave ", "code", "chromium", "opera", "zoom", "servers", "monitoring", "notes"]
+--                                                                                                                   
+  $ ["[1]:\xf27b ", "[2]:\xf269 ", "[3]:\xf1c9 ", "[4]:\xf268 ", "[5]:\xf26a ", "[6]:\xf03d ", "[7]:\xf98a ", "[8]:\xf437 ", "[9]:\xf249 "]
   where
     clickable l = ["<action=xdotool key super+" ++ show (i) ++ "> " ++ ws ++ "</action>" | (i, ws) <- zip [1 .. 9] l]
 
