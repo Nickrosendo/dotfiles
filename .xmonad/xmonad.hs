@@ -58,7 +58,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "trayer --edge top  --monitor 1 --widthtype pixel --width 100 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 & xcompmgr -c -f -n & nitrogen --restore & fbxkb"
+    spawnOnce "trayer --edge top  --monitor 0 --widthtype pixel --width 100 --heighttype pixel --height 18 --align right --transparent true --alpha 0 --tint 0x292d3e --iconspacing 3 --distance 1 & xcompmgr -c -f -n & nitrogen --restore & fbxkb"
     setWMName "LG3D"
 
 
@@ -119,7 +119,7 @@ myWorkspaces = clickable . (map xmobarEscape)
 --
 --  $ ["browser", "dev", "term", "ref", "sys", "fs", "img", "vid", "misc"]
 --                                                                                                                   
-  $ ["[1]:\xf27b ", "[2]:\xf269 ", "[3]:\xf1c9 ", "[4]:\xf268 ", "[5]:\xf26a ", "[6]:\xf03d ", "[7]:\xf98a ", "[8]:\xf437 ", "[9]:\xf249 "]
+  $ ["\xf9b0 ", "\xf316 ", "\xf489 ", "\xe743 ", "\xe746 ", "\xfa66 ", "\xf233 ", "\xf437 ", "\xf249 "]
   where
     clickable l = ["<action=xdotool key super+" ++ show (i) ++ "> " ++ ws ++ "</action>" | (i, ws) <- zip [1 .. 9] l]
 
@@ -182,14 +182,14 @@ myKeys =
     -- Browser
     ("M-b", spawn "brave"),
     -- File explorer
-    ("M-e", spawn "pcmanfm"),
+    ("M-e", spawn "nautilus"),
     -- Terminal
     ("M-<Return>", spawn myTerminal),
     -- Redshift
-    ("M-r", spawn "redshift -O 2400"),
+    ("M-r", spawn "redshift -O 3000"),
     ("M-S-r", spawn "redshift -x"),
-    -- Scrot
-    ("M-s", spawn "scrot"),
+    -- Screen capturing
+    ("M-s", spawn "spectacle"),
 
     --------------------- Hardware ---------------------
 
@@ -209,8 +209,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Xmobar
-    xmobarLaptop <- spawnPipe "xmobar -x 1 ~/.config/xmobar/primary.hs"
-    xmobarMonitor <- spawnPipe "xmobar -x 0 ~/.config/xmobar/secondary.hs"
+    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
     -- Xmonad
     xmonad $ ewmh def {
         manageHook = (isFullscreen --> doFullFloat) <+> manageDocks <+> insertPosition Below Newer,
