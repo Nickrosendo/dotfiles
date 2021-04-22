@@ -28,6 +28,15 @@ endif
 "configure the amount of lines a commands display height
 set cmdheight=1
 
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let undo_dir = expand(stdpath('data') . '/undodir')
+    " Create dirs
+    call system('mkdir ' . undo_dir)
+    let &undodir = undo_dir
+    set undofile
+endif
+
 "identation
 set autoindent
 set smartindent
@@ -164,11 +173,16 @@ nmap <C-F> :call Get_default_formatter_command() <CR>
 " nmap <C-B> :call NERDTreeToggleInCurDir()<CR>
 
 "tab navegation key mappings
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
+noremap <leader>t <up> :tabr<cr>
+noremap <leader>t <down> :tabl<cr>
+noremap <leader>t <left> :tabp<cr>
+noremap <leader>t <right> :tabn<cr>
 
+"create new empty tab
+noremap <leader>tn :tabedit<cr>
+
+"close current tab
+noremap <leader>tc :tabclose<cr>
 
 "fzf commands remaps
 map <F1> :Ag<CR> 
@@ -200,10 +214,10 @@ else
 endif
 
 "Go To definition remappings
-  nmap <buffer> <leader>gd <Plug>(coc-definition)
-  nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-  nmap <buffer> <leader>gi <Plug>(coc-implementation)
-  nmap <buffer> <leader>gr <Plug>(coc-references)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
 
 " Remap pane split keybindings to use <leader-w> instead of <C-w>
 nnoremap <leader>ws :sp<cr>
@@ -217,12 +231,22 @@ nnoremap <leader>wl <c-w>l<cr>
 nnoremap <leader>wK <c-w>K<cr>
 nnoremap <leader>wH <c-w>H<cr>
 
+" Remap horizontal pane size increase/decrease bindings
+nnoremap <leader>w+ :20winc ><cr>
+nnoremap <leader>w- :20winc <<cr>
+
+" Remap vertical pane size increase/decrease bindings
+nnoremap <leader>v+ :10winc +<cr>
+nnoremap <leader>v- :10winc -<cr>
+
 " vim-maximizer command remap
 nnoremap <leader>z :MaximizerToggle<cr>
 
+"
 " =============================================================================
 " # Code Formating Settings
 " =============================================================================
+"
 
 "enable format on save of rust code
 let g:rustfmt_autosave = 1
