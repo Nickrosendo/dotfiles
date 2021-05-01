@@ -209,8 +209,8 @@ myKeys =
 main :: IO ()
 main = do
     -- Xmobar
-    xmobarLaptop <- spawnPipe "xmobar -x 0 ~/.config/xmobar/primary.hs"
-    xmobarMonitor <- spawnPipe "xmobar -x 1 ~/.config/xmobar/secondary.hs"
+    xmobarLaptop <- spawnPipe "xmobar -x 1 ~/.config/xmobar/primary.hs"
+    xmobarMonitor <- spawnPipe "xmobar -x 0 ~/.config/xmobar/secondary.hs"
     -- Xmonad
     xmonad $ ewmh def {
         manageHook = (isFullscreen --> doFullFloat) <+> manageDocks <+> insertPosition Below Newer,
@@ -226,7 +226,11 @@ main = do
         -- Log hook
         logHook = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP {
             
-            ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor x,
+
+            -- Laptop output
+            ppOutput = \x -> hPutStrLn xmobarLaptop x,
+            -- Desktop output
+            -- ppOutput = \x -> hPutStrLn xmobarLaptop x >> hPutStrLn xmobarMonitor x,
             -- Current workspace in xmobar
             ppCurrent = xmobarColor "#C41010" "" . wrap "[" " ]",
             -- Visible but not current workspace
