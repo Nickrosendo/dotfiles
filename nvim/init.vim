@@ -158,6 +158,17 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Create a scratch buffer
+function! Scratch()
+    split
+    noswapfile hide enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    "setlocal nobuflisted
+    "lcd ~
+    file scratch
+endfunction
+
 " =============================================================================
 " # Remappings 
 " =============================================================================
