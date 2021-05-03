@@ -16,6 +16,7 @@ Config {
         Run Com "volume" [] "volume" 10,
         Run Com "/home/nickrosendo/.config/xmobar/cpu-temperature.sh" [] "cpu_temp" 600,
         Run Com "/home/nickrosendo/.config/xmobar/trayer-padding-icon.sh" [] "trayerpad" 600,
+        Run Com "battery" [] "battery" 600,
         Run UnsafeStdinReader
     ],
     sepChar = "%",
@@ -27,5 +28,6 @@ Config {
         \<fc=#8ABEB7> %enp4s0% </fc>\
         \<fc=#B5BD68> %volume% </fc>\
         \<fc=#CC6666> %date% </fc>\
+        \<fc=#FF5555> %battery% </fc>\
         \%trayerpad%" 
 }
